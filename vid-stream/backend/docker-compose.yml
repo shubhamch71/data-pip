@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  user_service:
+    build:
+      context: ./user_service
+    ports:
+      - "5000:5000"
+
+  video_service:
+    build:
+      context: ./video_service
+    ports:
+      - "5001:5001"
+    volumes:
+      - ./video_service/uploads:/uploads
